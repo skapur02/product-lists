@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .product h2 {
+            margin: 0;
+            color: #333;
+        }
+        .product p {
+            margin: 5px 0;
+        }
+        .price {
+            font-weight: bold;
+            color: green;
+        }
+        .categories {
+            font-size: 14px;
+            color: #555;
+        }
+        .category-tag {
+            display: inline-block;
+            background: lightgray;
+            padding: 2px 5px;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="load">Load Products</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function(){
+            $("#load").click(function(){
+                $.get("products.json", function(data){
+                    console.log("JSON Loaded:", data); // debugging 
+                    let output = "";
+                    data.forEach(product => {
+                        output += `
+                            <div class="product">
+                                <h2>${product.name}</h2>
+                                <p><i>${product.description}</i></p>
+                                <p class="price">Price: $${product.price}</p>
+                                <p class="categories">Categories: 
+                                    ${product.categories.map(cat => `<span class="category-tag">${cat}</span>`).join("")}
+                                </p>
+                            </div>
+                        `;
+                    });
+                    $("#result").html(output);
+                }).fail(function(){
+                    console.log("Error: Unable to load products.json"); // if JSON fails to load
+                });
+            });
+        });
+    </script>
+</body>
+</html>

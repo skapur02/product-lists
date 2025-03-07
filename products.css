@@ -1,0 +1,28 @@
+product {
+    display: block;
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+description {
+    font-style: italic;
+}
+
+price {
+    color: green;
+    font-weight: bold;
+}
+
+category {
+    display: inline-block;
+    background: lightgray;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Vintage T-shirt",
+        "description": "Tie-dye Grateful Dead T-shirt",
+        "price": 35,
+        "categories": ["clothing", "vintage"]
+    },
+    {
+        "name": "Wireless Headphones",
+        "description": "Noise-canceling over-ear headphones",
+        "price": 120,
+        "categories": ["electronics"]
+    },
+    {
+        "name": "Running Shoes",
+        "description": "Lightweight running shoes",
+        "price": 85,
+        "categories": ["clothing", "sports"]
+    },
+    {
+        "name": "Smart Watch",
+        "description": "Waterproof fitness tracker",
+        "price": 150,
+        "categories": ["electronics", "sports"]
+    },
+    {
+        "name": "Leather Wallet",
+        "description": "Handmade genuine leather wallet",
+        "price": 50,
+        "categories": ["accessories"]
+    },
+    {
+        "name": "Bluetooth Speaker",
+        "description": "Portable outdoor speaker",
+        "price": 99,
+        "categories": ["electronics"]
+    },
+    {
+        "name": "Hiking Backpack",
+        "description": "Durable waterproof backpack",
+        "price": 120,
+        "categories": ["sports", "accessories"]
+    },
+    {
+        "name": "Denim Jacket",
+        "description": "Classic blue denim jacket",
+        "price": 70,
+        "categories": ["clothing"]
+    }
+]

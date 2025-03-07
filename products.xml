@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>Vintage T-shirt</name>
+        <description>Tie-dye Grateful Dead T-shirt</description>
+        <price>35</price>
+        <category>clothing</category>
+        <category>vintage</category>
+    </product>
+    <product>
+        <name>Wireless Headphones</name>
+        <description>Noise-canceling over-ear headphones</description>
+        <price>120</price>
+        <category>electronics</category>
+    </product>
+    <product>
+        <name>Running Shoes</name>
+        <description>Lightweight running shoes</description>
+        <price>85</price>
+        <category>clothing</category>
+        <category>sports</category>
+    </product>
+    <product>
+        <name>Smart Watch</name>
+        <description>Waterproof fitness tracker</description>
+        <price>150</price>
+        <category>electronics</category>
+        <category>sports</category>
+    </product>
+    <product>
+        <name>Leather Wallet</name>
+        <description>Handmade genuine leather wallet</description>
+        <price>50</price>
+        <category>accessories</category>
+    </product>
+    <product>
+        <name>Bluetooth Speaker</name>
+        <description>Portable outdoor speaker</description>
+        <price>99</price>
+        <category>electronics</category>
+    </product>
+    <product>
+        <name>Hiking Backpack</name>
+        <description>Durable waterproof backpack</description>
+        <price>120</price>
+        <category>sports</category>
+        <category>accessories</category>
+    </product>
+    <product>
+        <name>Denim Jacket</name>
+        <description>Classic blue denim jacket</description>
+        <price>70</price>
+        <category>clothing</category>
+    </product>
+</products>

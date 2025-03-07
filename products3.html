@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Products</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .filtered-products {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <label for="category">Select Category:</label>
+    <select id="category"></select>
+    <button id="filter">Filter</button>
+    <div id="filtered" class="filtered-products"></div>
+
+    <script>
+        let allProducts = [];
+
+        $(document).ready(function(){
+            // Load JSON and dynamically populate categories
+            $.get("products.json", function(data){
+                console.log("JSON Data Loaded:", data); // Debugging
+                allProducts = data;
+
+                let categories = new Set();
+                data.forEach(product => product.categories.forEach(cat => categories.add(cat)));
+
+                // Populate dropdown dynamically
+                categories.forEach(cat => $("#category").append(`<option value="${cat}">${cat}</option>`));
+                console.log("Categories Loaded:", Array.from(categories)); // Debugging
+            }).fail(function(){
+                console.log("Error: Unable to load products.json"); // Debugging
+            });
+
+            // Filter products on button click
+            $("#filter").click(function(){
+                let selectedCategory = $("#category").val();
+                console.log("Selected Category:", selectedCategory); // Debugging
+                
+                let filteredProducts = allProducts
+                    .filter(product => product.categories.includes(selectedCategory))
+                    .map(product => `<p>${product.name}</p>`)
+                    .join("");
+
+                $("#filtered").html(filteredProducts || "<p>No products found.</p>");
+            });
+        });
+    </script>
+</body>
+</html>
